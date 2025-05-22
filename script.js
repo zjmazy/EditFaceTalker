@@ -26,4 +26,48 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Add carousel functionality for Quality Comparison section
+    const carouselVideos = document.querySelector('.carousel-videos');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const totalItems = carouselItems.length;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselVideos.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    // Optional: Add touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carouselVideos.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    carouselVideos.addEventListener('touchmove', (e) => {
+        touchEndX = e.touches[0].clientX;
+    });
+
+    carouselVideos.addEventListener('touchend', () => {
+        if (touchEndX < touchStartX - 50) { // Swipe left
+            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+        } else if (touchEndX > touchStartX + 50) { // Swipe right
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+        }
+        updateCarousel();
+    });
 });

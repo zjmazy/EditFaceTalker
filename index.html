@@ -12,18 +12,8 @@
     <header>
         <div class="title-container">
             <h1>FaceEditTalker: Interactive Talking Head Generation with Facial Attribute Editing</h1>
-            <div class="authors">
-                <p>Guanwen Feng<sup>1,2,3</sup>, Zhiyuan Ma<sup>1,2,3</sup>, Yunan Li<sup>1,2,3</sup>, Junwei Jing<sup>1,2,3</sup>, Jiahao Yang<sup>1,2,3</sup>, Qiguang Miao<sup>1,2,3</sup></p>
-                <p class="affiliations">
-                    <sup>1</sup>Xi’an Key Laboratory of Big Data and Intelligent Vision, Xidian University, 
-                    <sup>2</sup>China and Key Laboratory of Collaborative lntelligence Systems, Ministry of Education, Xidian University,
-                    <sup>3</sup>School of Computer Science and Technology, Xidian University</p>
-            </div>
         </div>
         <div class="buttons-container">
-            <a href="#" class="button paper-button"><i class="fas fa-file-alt"></i> Paper</a>
-            <a href="#" class="button code-button"><i class="fas fa-code"></i> Code</a>
-            <!-- <a href="#" class="button project-button"><i class="fas fa-home"></i> Project Page</a> -->
         </div>
     </header>
 
@@ -57,95 +47,61 @@
                     while the semantic codes serve as conditional inputs to ensure attribute consistency and visual fidelity
                     throughout the video.</p>
             </div>
-            <!-- <div class="overview-description">
-                <p>如图1所示，FaceEditTalker由x个主要组件构成：</p>
-                <ol>
-                    <li><strong>xxx提取器</strong>：将输入音频转换为时序语音特征，捕捉发音和韵律信息。</li>
-                    <li><strong>xxx编码器</strong>：从参考图像中提取并解耦面部身份和姿态特征。</li>
-                    <li><strong>xxx生成器</strong>：整合音频特征和解耦的面部特征，生成自然、流畅且表情可控的说话视频。</li>
-                </ol>
-                <p>我们的方法支持多种面部属性的精细编辑，包括发型发色，面部特征，面部配饰等，同时保持口型与音频的精确同步。</p>
-            </div> -->
         </div>
     </section>
 
     <section id="comparison">
         <h2>Quality Comparison</h2>
         <div class="content-box">
-            <p class="section-intro">We compared FaceEditTalker with several state-of-the-art methods, including Wav2Lip, MakeItTalk, and Audio2Head.</p>
+            <p class="section-intro">We compared FaceEditTalker with several state-of-the-art methods.</p>
             
-            <div class="comparison-grid">
-                <div class="comparison-item">
-                    <h3>Visual Quality Comparison</h3>
+            <div class="comparison-layout">
+                <div class="comparison-left">
+                    <h3>Dataset Video</h3>
                     <div class="comparison-video">
-                        <video controls>
-                            <source src="videos/quality_comparison.mp4" type="video/mp4">
+                        <video controls width="1920" height="1080">
+                            <source src="videos/comparative_video/comparison_video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p class="caption">Figure 2: Visual quality comparison with existing methods. From left to right: Original video, Wav2Lip, MakeItTalk, Audio2Head, and our FaceEditTalker.</p>
+                    <p class="caption">Dataset video comparison.</p>
                 </div>
                 
-                <div class="comparison-item">
-                    <h3>Lip Sync Accuracy</h3>
-                    <!-- <div class="comparison-image">
-                        <img src="images/lip_sync_comparison.png" alt="口型同步精度比较">
-                    </div> -->
-                    <div class="comparison-video">
-                        <video controls>
-                            <source src="videos/quality_comparison.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                <div class="comparison-right">
+                    <h3>External Comparison Videos</h3>
+                    <div class="carousel-container">
+                        <div class="carousel-videos">
+                            <div class="carousel-item">
+                                <video controls width="1440" height="1080">
+                                    <source src="videos/comparative_video/dataset_external_comparison_video_1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="carousel-item">
+                                <video controls width="1440" height="1080">
+                                    <source src="videos/comparative_video/dataset_external_comparison_video_2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="carousel-item">
+                                <video controls width="1440" height="1080">
+                                    <source src="videos/comparative_video/dataset_external_comparison_video_3.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="carousel-item">
+                                <video controls width="1440" height="1080">
+                                    <source src="videos/comparative_video/dataset_external_comparison_video_4.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
                     </div>
-                    <p class="caption">Figure 3: Lip sync accuracy comparison of different methods. Our method achieves the best results in both LSE-D and LSE-C metrics.</p>
+                    <p class="caption">External comparison videos (swipe left/right).</p>
                 </div>
             </div>
-            
-            <!-- <div class="comparison-table">
-                <h3>定量评估结果</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>方法</th>
-                            <th>LSE-D ↓</th>
-                            <th>LSE-C ↑</th>
-                            <th>FID ↓</th>
-                            <th>用户偏好 ↑</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Wav2Lip</td>
-                            <td>7.42</td>
-                            <td>6.91</td>
-                            <td>38.54</td>
-                            <td>18.3%</td>
-                        </tr>
-                        <tr>
-                            <td>MakeItTalk</td>
-                            <td>9.56</td>
-                            <td>5.23</td>
-                            <td>42.17</td>
-                            <td>12.7%</td>
-                        </tr>
-                        <tr>
-                            <td>Audio2Head</td>
-                            <td>6.89</td>
-                            <td>7.12</td>
-                            <td>35.21</td>
-                            <td>23.5%</td>
-                        </tr>
-                        <tr class="our-method">
-                            <td>FaceEditTalker (Ours)</td>
-                            <td><strong>5.17</strong></td>
-                            <td><strong>8.45</strong></td>
-                            <td><strong>29.83</strong></td>
-                            <td><strong>45.5%</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="caption">表1: 不同方法的定量评估结果。LSE-D: 口型同步误差距离; LSE-C: 口型同步误差置信度; FID: Fréchet Inception Distance; 用户偏好: 人类评估中的偏好百分比。</p>
-            </div> -->
         </div>
     </section>
 
@@ -157,8 +113,10 @@
             <div class="character-selector">
                 <button class="character-button active" data-character="Chris_Hemsworth_019">Chris Hemsworth</button>
                 <button class="character-button" data-character="yangziqiong_033">Michelle Yeoh</button>
-                <button class="character-button" data-character="zhoujielun_lyl">Jay Chou</button>
+                <!-- <button class="character-button" data-character="zhoujielun_lyl">Jay Chou</button> -->
                 <button class="character-button" data-character="lyl_lyl">Li Yunlong</button>
+                <button class="character-button" data-character="Jackie_Chan_Jackie_Chan">Jackie Chan</button>
+                <button class="character-button" data-character="zjl_zjl">Jay Chou</button>
             </div>
             
             <div class="emotion-grid">
@@ -443,47 +401,8 @@
                     </video>
                 </div>
             </div>
-            
-            <!-- <div class="attribute-control">
-                <h3>头部姿态控制</h3>
-                <div class="attribute-video">
-                    <video controls>
-                        <source src="videos/head_pose_control.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p class="caption">图4: 通过调整头部姿态参数，可以控制生成视频中的头部运动。</p>
-            </div>
-            
-            <div class="attribute-control">
-                <h3>眼部动作控制</h3>
-                <div class="attribute-video">
-                    <video controls>
-                        <source src="videos/eye_movement_control.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p class="caption">图5: 通过调整眼部参数，可以控制生成视频中的眨眼频率和视线方向。</p>
-            </div> -->
         </div>
     </section>
-
-    <!-- <section id="bibtex">
-        <h2>BibTeX</h2>
-        <div class="content-box">
-            <pre><code>@inproceedings{zhang2023FaceEditTalker,
-  title={FaceEditTalker: 可编辑的面部表情驱动的说话人合成},
-  author={张三 and 李四 and 王五 and 赵六},
-  booktitle={计算机视觉与模式识别会议论文集},
-  pages={1234--1243},
-  year={2023}
-}</code></pre>
-        </div>
-    </section> -->
-
-    <footer>
-        <p>&copy; 2025 Xi'an Key Laboratory of Big Data and Intelligent Vision, Xidian University. All rights reserved.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
