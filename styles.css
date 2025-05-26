@@ -18,6 +18,11 @@ body {
     background-color: #fff;
 }
 
+/* Text Alignment */
+.content-box p {
+    text-align: justify;
+}
+
 /* Page Layout */
 header {
     padding: 2rem;
@@ -92,21 +97,27 @@ section {
 .character-selector {
     text-align: center;
     margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 1rem 0;
 }
 
 .character-button {
-    padding: 1rem 2rem;
-    margin: 0 1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
     border: 2px solid transparent;
     border-radius: 50px;
     background-color: #f0f0f0;
     color: #333;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .character-button:hover {
@@ -150,6 +161,11 @@ h2 {
     max-width: 100%;
     height: auto;
     border-radius: var(--border-radius);
+}
+
+.overview-image .caption {
+    text-align: justify;
+    margin-top: 1rem;
 }
 
 .overview-description {

@@ -12,19 +12,30 @@
     <header>
         <div class="title-container">
             <h1>FaceEditTalker: Interactive Talking Head Generation with Facial Attribute Editing</h1>
+            <div class="authors">
+                <p>Guanwen Feng<sup>1,2,3</sup>, Zhiyuan Ma<sup>1,2,3</sup>, Yunan Li<sup>1,2,3</sup>, Junwei Jing<sup>3</sup>, Jiahao Yang<sup>3</sup>, Qiguang Miao<sup>1,2,3</sup></p>
+                <p class="affiliations">
+                    <sup>1</sup>Xi’an Key Laboratory of Big Data and Intelligent Vision, Xidian University, 
+                    <sup>2</sup>China and Key Laboratory of Collaborative lntelligence Systems, Ministry of Education, Xidian University,
+                    <sup>3</sup>School of Computer Science and Technology, Xidian University</p>
+            </div>
         </div>
         <div class="buttons-container">
+            <a href="#" class="button paper-button"><i class="fas fa-file-alt"></i> Paper</a>
+            <a href="#" class="button code-button"><i class="fas fa-code"></i> Code</a>
+            <!-- <a href="#" class="button project-button"><i class="fas fa-home"></i> Project Page</a> -->
         </div>
     </header>
 
     <section id="abstract">
-        <h2>abstract</h2>
+        <h2>Abstract</h2>
         <div class="content-box">
             <p>Recent advances in audio-driven talking head generation have achieved impressive results in lip synchronization and emotional expression. However, they largely overlook the crucial task of facial attribute editing. This capability is crucial for achieving deep personalization and expanding the range of practical applications, including user-tailored digital avatars, engaging online education content, and brand-specific digital customer service. In these key domains, the flexible adjustment of visual attributes—such as hairstyle, accessories, and subtle facial features—is essential for aligning with user preferences, reflecting diverse brand identities, and adapting to varying contextual demands. In this paper, we present FaceEditTalker, a unified framework that enables controllable facial attribute manipulation while generating high-quality, audio-synchronized talking head videos. Our method consists of two key components: an image feature space editing module, which extracts semantic and detail features and allows flexible control over attributes like expression, hairstyle, and accessories; and an audio-driven video generation module, which fuses these edited features with audio-guided facial landmarks to drive a diffusion-based generator. This design ensures temporal coherence, visual fidelity, and identity preservation across frames. Extensive experiments on public datasets demonstrate that our method outperforms state-of-the-art approaches in lip-sync accuracy, video quality, and attribute controllability.</p>
         </div>
     </section>
 
     <section id="header-image">
+        <h2>The flowchart of EditFaceTalker</h2>
         <div class="content-box">
             <div class="overview-image">
                 <img src="images/header.png" alt="FaceEditTalker Pipeline Illustration">
@@ -34,7 +45,7 @@
     </section>
 
     <section id="overview">
-        <h2>Overview of our proposed framework FaceEditTalker.</h2>
+        <h2>The overview of FaceEditTalker</h2>
         <div class="content-box">
             <div class="overview-image">
                 <img src="images/overview.png" alt="FaceEditTalker Technical Architecture Diagram">
@@ -53,54 +64,49 @@
     <section id="comparison">
         <h2>Quality Comparison</h2>
         <div class="content-box">
-            <p class="section-intro">We compared FaceEditTalker with several state-of-the-art methods.</p>
+            <p class="section-intro">We compared FaceEditTalker with several state-of-the-art methods, including Wav2Lip which primarily focuses on lip synchronization, SadTalker based on 3D facial modeling, and diffusion model-based generation methods such as DiffTalk, EchoMimic, and Hallo. Below shows the quality comparison results in regular generation mode, without involving attribute editing functionality.</p>
             
-            <div class="comparison-layout">
-                <div class="comparison-left">
-                    <h3>Dataset Video</h3>
-                    <div class="comparison-video">
+            <div class="carousel-container">
+                <div class="carousel-videos">
+                    <div class="carousel-item">
                         <video controls width="1920" height="1080">
                             <source src="videos/comparative_video/comparison_video.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <!-- <p class="caption">Dataset Video Comparison</p> -->
                     </div>
-                    <p class="caption">Dataset video comparison.</p>
-                </div>
-                
-                <div class="comparison-right">
-                    <h3>External Comparison Videos</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-videos">
-                            <div class="carousel-item">
-                                <video controls width="1440" height="1080">
-                                    <source src="videos/comparative_video/dataset_external_comparison_video_1.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="carousel-item">
-                                <video controls width="1440" height="1080">
-                                    <source src="videos/comparative_video/dataset_external_comparison_video_2.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="carousel-item">
-                                <video controls width="1440" height="1080">
-                                    <source src="videos/comparative_video/dataset_external_comparison_video_3.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="carousel-item">
-                                <video controls width="1440" height="1080">
-                                    <source src="videos/comparative_video/dataset_external_comparison_video_4.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                        <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-item">
+                        <video controls width="1440" height="1080">
+                            <source src="videos/comparative_video/dataset_external_comparison_video_1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <p class="caption">External Comparison Video 1</p> -->
                     </div>
-                    <p class="caption">External comparison videos (swipe left/right).</p>
+                    <div class="carousel-item">
+                        <video controls width="1440" height="1080">
+                            <source src="videos/comparative_video/dataset_external_comparison_video_2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <p class="caption">External Comparison Video 2</p> -->
+                    </div>
+                    <div class="carousel-item">
+                        <video controls width="1440" height="1080">
+                            <source src="videos/comparative_video/dataset_external_comparison_video_3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <p class="caption">External Comparison Video 3</p> -->
+                    </div>
+                    <div class="carousel-item">
+                        <video controls width="1440" height="1080">
+                            <source src="videos/comparative_video/dataset_external_comparison_video_4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- <p class="caption">External Comparison Video 4</p> -->
+                    </div>
                 </div>
+                <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+                <p class="carousel-hint">Slide left or right to view more comparison videos</p>
             </div>
         </div>
     </section>
@@ -116,7 +122,11 @@
                 <!-- <button class="character-button" data-character="zhoujielun_lyl">Jay Chou</button> -->
                 <button class="character-button" data-character="lyl_lyl">Li Yunlong</button>
                 <button class="character-button" data-character="Jackie_Chan_Jackie_Chan">Jackie Chan</button>
+                <button class="character-button" data-character="zhoujielun_019">Jay Chou (English)</button>
                 <button class="character-button" data-character="zjl_zjl">Jay Chou</button>
+            </div>
+            <div id="jay-chou-notice" style="display: none; margin-top: 10px; color: #666; font-style: italic; text-align: center;">
+                Due to the presence of background sound in Jay Chou's original speech videos, the lip-sync accuracy of the driven videos may be affected by audio interference.
             </div>
             
             <div class="emotion-grid">
@@ -404,6 +414,23 @@
         </div>
     </section>
 
+    <!-- <section id="bibtex">
+        <h2>BibTeX</h2>
+        <div class="content-box">
+            <pre><code>@inproceedings{zhang2023FaceEditTalker,
+  title={FaceEditTalker: 可编辑的面部表情驱动的说话人合成},
+  author={张三 and 李四 and 王五 and 赵六},
+  booktitle={计算机视觉与模式识别会议论文集},
+  pages={1234--1243},
+  year={2023}
+}</code></pre>
+        </div>
+    </section> -->
+
+    <footer>
+        <p>&copy; 2025 Xi'an Key Laboratory of Big Data and Intelligent Vision, Xidian University. All rights reserved.</p>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

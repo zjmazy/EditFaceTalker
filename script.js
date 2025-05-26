@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const characterButtons = document.querySelectorAll('.character-button');
     const videoSources = document.querySelectorAll('.emotion-item video source');
 
+    const jayNotice = document.getElementById('jay-chou-notice');
+
     characterButtons.forEach(button => {
         button.addEventListener('click', function() {
             // 更新按钮状态
@@ -10,6 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 获取选中的人物
             const selectedCharacter = this.dataset.character;
+
+            // 控制Jay Chou提示信息的显示
+            if (selectedCharacter === 'zjl_zjl') {
+                jayNotice.style.display = 'block';
+            } else {
+                jayNotice.style.display = 'none';
+            }
 
             // 更新所有视频源
             videoSources.forEach(source => {
